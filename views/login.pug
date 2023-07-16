@@ -1,0 +1,60 @@
+div.modal.animate__animated.animate__zoomIn#login-modal
+  div.modal-dialog.modal-lg.modal-dialog-centered
+    div.modal-content
+      div.modal-body.p-5
+        div.row
+          div.col-md-6.d-flex.align-items-center.justify-content-center
+            img(src="images/signup.svg" width="100%")
+          div.col-md-6
+            h1.display-4.mb-4(style="font-size:35px") Welcome !
+            form#login-form
+              div.form-group.mb-4
+                input.form-control.p-4(
+                  type="email" 
+                  name="email" 
+                  placeholder="Email id"
+                  value="wapinstitution@gmail.com"
+                  class="username"
+                  )
+                span.text-danger.username-error
+                  
+              div.form-group.mb-4
+                input.form-control.p-4(
+                  type="password" 
+                  name="password" 
+                  placeholder="Password"
+                  value="1234"
+                  class="company-password"
+                  )
+                span.text-danger.password-error
+              
+              div.mb-4
+                div.custom-control.custom-radio.custom-control-inline
+                  input#admin.login-as.custom-control-input(type='radio' name='loginAs' value='admin')
+                  label.custom-control-label(for='admin') Admin
+                  
+                div.custom-control.custom-radio.custom-control-inline
+                  input#client.login-as.custom-control-input(type='radio' name='loginAs' value='client')
+                  label.custom-control-label(for='client') Client
+                  
+                div.custom-control.custom-radio.custom-control-inline
+                  input#team.login-as.custom-control-input(type='radio' name='loginAs' value='team')
+                  label.custom-control-label(for='team') Team
+                                  
+              div.form-group.mb-4
+                button.btn.login-btn(
+                  type="submit"
+                  style="background-color: #377DFF;color:white"
+                  disabled="true"
+                  ) Login
+                  
+                button.btn.btn-danger.disabled.d-none.before-send
+                  span.spinner-grow.spinner-grow-sm.mr-2
+                  span Processing
+                  
+              p New user? 
+                a(href="#")#request-signup-modal Create an account
+                  
+                  
+        
+        

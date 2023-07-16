@@ -1,0 +1,63 @@
+div.modal.animate__animated.animate__zoomIn#signup-modal
+  div.modal-dialog.modal-lg.modal-dialog-centered
+    div.modal-content
+      div.modal-body.p-5
+        div.row
+          div.col-md-6.d-flex.align-items-center.justify-content-center
+            img(src="images/signup.svg" width="100%")
+          div.col-md-6
+            h1.display-4.mb-4(style="font-size:35px") Register Now
+            form#signup-form
+              div.form-group.mb-4
+                input.form-control.p-4.company-name(
+                  type="text" 
+                  name="company_name" 
+                  placeholder="Company name"
+                  required="required"
+                  value="wap institute"
+                  )
+                span.text-danger.company-name-error
+                  
+              div.form-group.mb-4
+                input.form-control.p-4.company-email(
+                  type="email" 
+                  name="email" 
+                  placeholder="Company email"
+                  required="required"
+                  value="wapinstitution@gmail.com"
+                  )
+                span.text-danger.company-email-error
+                  
+              div.form-group.mb-4
+                input.form-control.p-4(
+                  type="number" 
+                  name="mobile" 
+                  placeholder="Mobile no"
+                  required="required"
+                  value=0123456789
+                  )
+                  
+              div.form-group.mb-4
+                input.form-control.p-4(
+                  type="password" 
+                  name="password" 
+                  placeholder="Password"
+                  required="required"
+                  value="1234"
+                  )
+                  
+              div.form-group.mb-4
+                button.btn.signup-btn(
+                  type="submit"
+                  style="background-color: #377DFF;color:white"
+                  ) Sign up
+                button.btn.btn-danger.disabled.d-none.before-send
+                  span.spinner-grow.spinner-grow-sm.mr-2
+                  span Processing
+                  
+              p Already have an account? 
+                a(href="#")#request-login-modal Login
+                  
+                  
+        
+        

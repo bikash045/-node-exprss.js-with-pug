@@ -1,0 +1,98 @@
+include profile
+  
+  block loadStyle
+    link(rel="stylesheet" href="stylesheets/clients.css")
+
+  block loadScript
+    script(src="javascripts/clients.js")
+
+  block content
+    - const skeleton = [0,1,2,3,4]
+
+    p.medium-font.p-0 Clients
+    div.card.container-fluid.p-3.border-none
+      div.card-body
+        div.row
+          div.col-md-4
+            div.d-flex.align-items-center
+              button.btn.icon-btn-info.mr-3.filter-btn
+                i.fa.fa-cog.fa-spin
+              input.form-control.input.remove-focus.filter.filter-by-name(placeholder="Search by name")
+          div.col-md-5
+          div.col-md-3.d-flex
+            div.dropdown
+             button.btn.btn-light.mr-4.dropdown-toggle(data-toggle="dropdown") Export
+             div.dropdown-menu.mt-2
+              a(href="#").dropdown-item#current Current
+              a(href="#").dropdown-item#all All
+            button.btn.btn-primary#add-client-btn Add Client
+        table.table.my-4
+          tr
+            th Client
+            th Email
+            th Mobile
+            th Status
+            th Date
+            th Action
+          each data of skeleton
+            tr.d-none.clients-skeleton
+              td.py-3(colspan="6")
+                div.d-flex
+                  div.mr-3.d-flex.align-items-center
+                    div.skeleton#client-pic
+                      div.skeleton-loader
+                  div.d-flex.w-100.flex-column
+                    div.skeleton.mb-2#client-title
+                      div.skeleton-loader
+                    div.skeleton#client-subtitle
+                      div.skeleton-loader
+        div.btn-group.float-right
+          button.btn.border#prev(disabled="disabled") Prev
+          div.btn-group#client-pagination
+          button.btn.border#next Next
+          
+
+                  
+    div.modal.animate__animated.animate__slideInDown.animate__faster#clientModal
+      div.modal-dialog.modal-dialog-centered
+        div.modal-content.border-none
+          div.modal-body.px-4.py-4
+            h4.medium-font.mb-4 Client Details
+            form#clientForm
+              div.form-group.mb-4
+                input.input.form-control.remove-focus(type="text" name="clientName" placeholder="Client name" required="required" value="saurav")
+                
+              div.form-group.mb-4
+                input.input.form-control.remove-focus#addClientEmail(type="email" name="clientEmail" placeholder="Email id" required="required" value="ersaurav08@gmail.com")
+                
+              div.form-group.mb-4
+                input.input.form-control.remove-focus#country(type="text" name="clientCountry" placeholder="Country" required="required" value="india")
+                                
+              div.form-group.mb-4.d-flex
+                button.btn.btn-light.mr-2#code(type="button") +91
+                input.input.form-control.remove-focus(type="number" name="clientMobile" placeholder="Mobile" required="required" value="9199987267")
+                
+              button.btn.btn-primary.add-client-submit(type="submit") Submit
+              button.btn.btn-danger.btn-design.d-none.add-client-loader(disabled="disabled")
+                span.spinner-grow.spinner-grow-sm.mr-2
+                span Processing
+    div.modal.animate__animated.animate__slideInDown.animate__faster#shareModal
+      div.modal-dialog.modal-dialog-centered
+        div.modal-content.border-none
+          div.modal-body.px-4.py-4
+            h4.medium-font.mb-4 Share Link
+            div.form-group.mb-4
+              input.input.form-control.remove-focus.link(type="text" name="link" required="required")
+                
+            div.form-group.mb-4.d-flex
+                button.btn.icon-btn-info.mr-4.copy-link
+                  i.fa.fa-copy
+                button.btn.icon-btn-warning.mr-4.share-on-email
+                  i.fa.fa-envelope
+                button.btn.icon-btn-success.share-on-whatsapp
+                  img(src="images/whatsapp.png")
+          div.progressive-loading.d-none
+            div.moving-progress
+    div.tmp
+                
+              
